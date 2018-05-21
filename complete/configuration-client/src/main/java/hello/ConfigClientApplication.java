@@ -22,8 +22,11 @@ class MessageRestController {
     @Value("${message:Hello default}")
     private String message;
 
+    @Value("${dev.name:Dev default}")
+    private String devName;
+
     @RequestMapping("/message")
     String getMessage() {
-        return this.message;
+        return this.message + " by " + devName;
     }
 }
